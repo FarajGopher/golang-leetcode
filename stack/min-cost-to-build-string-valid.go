@@ -22,7 +22,7 @@ func MinCostBracketValid(s string) int{
 
 	a ,b := 0,0
 
-	for len(stack) == 0 {
+	for len(stack) != 0 {
 		if stack[len(stack)-1] == '{'{
 			b++
 		}else{
