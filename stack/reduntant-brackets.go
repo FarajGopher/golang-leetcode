@@ -1,5 +1,6 @@
-package stack
+package main
 
+import "fmt"
 
 //sudo
 /* for range till end of expression
@@ -38,5 +39,12 @@ func IsRedundant(exp string) bool {
 	return false
 }
 
+
+func main() {
+	// expression := "((a*b)+(c/d))"
+	redundantExpression := "(/)"
+	check := IsRedundant(redundantExpression)
+	fmt.Println("is reduntant: ", check)
+}
 
 
