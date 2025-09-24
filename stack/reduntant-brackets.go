@@ -27,7 +27,7 @@ func IsRedundant(exp string) bool {
 					}
 					stack = stack[:len(stack)-1]
 				}
-				if isRedundant == true{
+				if isRedundant{
 					return true
 				}
 
