@@ -2,6 +2,13 @@ package main
 
 import "fmt"
 
+// ***** below code can be used to find total number of item occurence 
+// how ( last index - first index ) + 1 
+
+
+//when mid found
+//max = mid - 1
+
 func firstOccurence(arr []int,find int) int{
 	min := 0
 	max := len(arr) - 1
@@ -19,6 +26,9 @@ func firstOccurence(arr []int,find int) int{
 	}
 	return first
 }
+
+//when mid found
+//min = mid + 1
 
 func lastOccurence(arr []int,find int) int{
 	min := 0
