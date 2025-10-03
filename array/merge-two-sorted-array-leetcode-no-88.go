@@ -2,39 +2,35 @@ package main
 
 import "fmt"
 
-func sortTwoArray(arr1 []int, len1 int, arr2 []int, len2 int) []int {
-	i := 0
-	j := 0
-	newarr := []int{}
-	for i < len1 && j < len2 {
-		if arr1[i] < arr2[j] {
-			newarr = append(newarr, arr1[i])
-			i++
+func merge(nums1 []int, m int, nums2 []int, n int) {
+	i := m - 1
+	j := n - 1
+	k := m + n - 1
+	// newArr := make([]int, m+n)
+	for i >= 0 && j >= 0 {
+		if nums2[j] > nums1[i] {
+			nums1[k] = nums2[j]
+			j--
 		} else {
-			newarr = append(newarr, arr2[j])
-			j++
+			nums1[k] = nums1[i]
+			i--
 		}
+		k--
 	}
 
-	// Append remaining elements of arr1 (if any)
-	for i < len1 {
-		newarr = append(newarr, arr1[i])
-		i++
+	for j >= 0 {
+		nums1[k] = nums2[j]
+		j--
+		k--
 	}
-
-	// Append remaining elements of arr2 (if any)
-	for j < len2 {
-		newarr = append(newarr, arr2[j])
-		j++
-	}
-
-	return newarr
 }
 
 func main() {
-	arr1 := []int{1, 2, 5, 7, 8}
-	arr2 := []int{3, 4, 6, 9}
+	nums1 := []int{1, 2, 3, 0, 0, 0}
+	nums2 := []int{2, 5, 6}
+	m, n := 3, 3
 
-	newSortedArray := sortTwoArray(arr1, len(arr1), arr2, len(arr2))
-	fmt.Println("new sorted array after merge: ", newSortedArray)
+	merge(nums1, m, nums2, n)
+
+	fmt.Println("Merged nums1:", nums1)
 }
