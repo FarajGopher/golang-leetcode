@@ -22,7 +22,7 @@ func secondlargestElementBetter(arr []int) int {
 	return secondLar
 }
 
-// ******* optimal approach
+// ******* optimal approach O(N)
 func secondlargestElementOptimal(arr []int) int {
 	largest := arr[0]
 	secondLar := -1
