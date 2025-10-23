@@ -1,0 +1,8 @@
+package main
+
+
+
+func main(){
+	arr := [1,2,3,4]
+	
+}

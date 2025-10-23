@@ -21,9 +21,22 @@ func fibonacciRecusion(n int) int {
 	return fibonacciRecusion(n-1) + fibonacciRecusion(n-2)
 }
 
+// Recursive Fibonacci sequence print
+func fibonacciPrintRecursion(a, b, n int) {
+	if n == 0 {
+		return
+	}
+	fmt.Println(a)
+	fibonacciPrintRecursion(b, a+b, n-1)
+}
+
+
 func main() {
-	n := 4
+	n := 10
 	fmt.Println("Fibonacci of", n, "is:")
 	fibonacci(n)
 	println("Fibonacci of", n, "using recursion is", fibonacciRecusion(n))
+
+	fmt.Println("\nFibonacci of", n, "terms (recursive print):")
+	fibonacciPrintRecursion(0, 1, n)
 }
